@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Gallery</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .page-content {
+            display: none;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #home {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        #home img {
+            display: block;
+            margin: 0 auto;
+            max-width: 70%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        #home img:hover {
+            transform: scale(1.1);
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .artwork {
+            width: 300px;
+            margin: 15px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .artwork:hover {
+            transform: scale(1.05);
+        }
+
+        .artwork a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .artwork img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Art Gallery</h1>
+    </header>
+
+    <nav>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('gallery')">Gallery</a>
+        <a onclick="showPage('about')">About</a>
+        <a onclick="showPage('contact')">Contact</a>
+    </nav>
+
+    <div class="page-content" id="home">
+        <h2 style="font-family: 'Verdana, Geneva, Tahoma, sans-serif';">-FINE ART-</h2>
+        <p>Art has the ability to transform a space and define its character...</p>
+        <img src="display.jpg" alt="Fine Art">
+    </div>
+    <div class="page-content" id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <!-- Sample gallery items, replace with your content -->
+            <div class="artwork">
+                <a href="artwork1.html">
+                    <img src="art2.jpeg" alt="Artwork 1">
+                    <h3>Artwork 1</h3>
+                    <p>Description of artwork 1.</p>
+                </a>
+            </div>
+            <div class="artwork">
+                <a href="artwork2.html">
+                    <img src="artist_isometric_cube2.jpg" alt="Artwork 2">
+                    <h3>Artwork 2</h3>
+                    <p>Description of artwork 2.</p>
+                </a>
+            </div>
+            <div class="artwork">
+                <a href="artwork3.html">
+                    <img src="europeana--kUYkiWWM6E-unsplash.jpg" alt="Artwork 2">
+                    <h3>Artwork 3</h3>
+                    <p>Description of artwork 2.</p>
+                </a>
+            </div>
+            <div class="artwork">
+                <a href="artwork4.html">
+                    <img src="europeana-8E31onOcVXg-unsplash.jpg" alt="Artwork 2">
+                    <h3>Artwork 4</h3>
+                    <p>Description of artwork 2.</p>
+                </a>
+            <!-- Add more gallery items as needed -->
+        </div>
+    </div>
+
+    <div class="page-content" id="about">
+        
+        <h2>About Us</h2>
+        <p>Welcome to our art gallery! We showcase a diverse collection of contemporary and traditional artworks from talented artists around the world. Explore our gallery and immerse yourself in the beauty of art.</p>
+    </div>
+
+    <div class="page-content" id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any inquiries or would like to get in touch with us, feel free to contact our team. We'd love to hear from you!</p>
+        <p>Email: info@unitypalette.com</p>
+        <p>Phone: (123) 456-7890</p>
+    </div>
+
+    <!-- Rest of your content -->
+
+    <footer>
+        <p>&copy; 2023 Art Gallery. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            
+            var pages = document.querySelectorAll('.page-content');
+            pages.forEach(function(page) {
+                page.style.display = 'none';
+            });
+
+            
+            var selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.style.display = 'block';
+            }
+        }
+        showPage('home');
+    </script>
+
+</body>
+
+</html>
